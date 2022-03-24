@@ -15,6 +15,8 @@ export const Navbar = () => {
             <div className="nav-wrapper teal text-lighten-5">
                 <ul id="nav-mobile" className="left ">
                     <li><NavLink to="/"
+                    >Добавить картинку</NavLink></li>
+                    <li><NavLink to="/"
                            onClick={logoutHandler}
                     >Выйти</NavLink></li>
                 </ul>

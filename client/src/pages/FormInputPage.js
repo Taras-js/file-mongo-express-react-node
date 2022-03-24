@@ -84,7 +84,7 @@ export const FormInputPage = () => {
                     </fieldset>
                 </form>
             </div>
-     <div className="form-file">
+            <div className="form-file">
          <div>  {
              avatar
                  ? <img className="logo" src={`${avatar}`} alt="avatar"/>
@@ -95,7 +95,6 @@ export const FormInputPage = () => {
              : <p>Здесь будет отображено описание Вашей картинки</p>
          } </div>
      </div>
-
         </div>
     )
 }

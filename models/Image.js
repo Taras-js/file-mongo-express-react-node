@@ -6,7 +6,7 @@ const imagesSchema = new Schema({
     path:  {type: String, required: true},
     size:  {type: Number, required: true},
     user:  {type: Schema.ObjectId, ref: 'users'},
-    images: {type: Schema.ObjectId, ref: 'users'}
+
 })
 
 module.exports = mongoose.model('images', imagesSchema)
