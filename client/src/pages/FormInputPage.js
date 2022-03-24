@@ -7,7 +7,7 @@ import axios from "axios";
 export const FormInputPage = () => {
     const auth = useContext(AuthContext)
     const message = useMessage()
-    const { loading, error, request, clearError} = useHttp()
+    const { error, clearError} = useHttp()
     const [text, setText] = useState('')
     const [img, setImg] = useState(null)
     const [avatar, setAvatar] = useState(null)
@@ -65,7 +65,6 @@ export const FormInputPage = () => {
                                            name="img"
                                            type="file"
                                            onChange={(e)=>setImg(e.target.files[0])}
-                                           disabled={loading}
                                     />
                                 </div>
                                 <div className="file-path-wrapper">

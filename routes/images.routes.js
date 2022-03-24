@@ -2,18 +2,17 @@ const {Router} = require('express')
 const Image = require('../models/Image')
 const upload = require('../middleware/upload')
 const router = Router()
-
+const {limits} = upload
 
 
 router.post('/upload', upload.single('avatar'), async (req, res) => {
- const {limits} = upload
     try {
         if(req.file.size < limits.fileSize) {
             const image = new Image({
                     name: req.file.originalname,
+                    text: req.body.text,
                     path: req.file ? req.file.path : '',
                     size: req.file.size,
-                    // userId: req.data.image._id,
                 }
             )
             const file = req.file
@@ -22,9 +21,6 @@ router.post('/upload', upload.single('avatar'), async (req, res) => {
         } else {
             res.status(400).json({message: 'Объем загружаемой картинки не более 5 мегабайт'})
         }
-
-
-
     } catch (error){
         console.log(error)
     }

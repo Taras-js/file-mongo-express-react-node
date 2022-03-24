@@ -11,13 +11,12 @@ export const Navbar = () => {
         navigate('/')
     }
     return (
-        <nav >
+        <nav>
             <div className="nav-wrapper teal text-lighten-5">
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                <ul id="nav-mobile" className="left ">
                     <li><NavLink to="/"
                            onClick={logoutHandler}
                     >Выйти</NavLink></li>
-
                 </ul>
             </div>
         </nav>

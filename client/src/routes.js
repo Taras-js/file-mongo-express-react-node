@@ -4,15 +4,12 @@ import {FormInputPage} from "./pages/FormInputPage";
 import {AuthPage} from "./pages/AuthPage";
 
 export const useRouter = (isAuthenticated) => {
-
     if(isAuthenticated){
         return (
                 <Routes>
                      <Route  path='/' element={<FormInputPage />} exact>
-
                      </Route>
                 </Routes>
-
     )}
         return (
             <Routes>

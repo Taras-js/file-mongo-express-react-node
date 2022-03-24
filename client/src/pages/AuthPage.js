@@ -44,8 +44,6 @@ export const AuthPage = () => {
     }
     return (
         <div className="card-panel teal text-lighten-5">
-
-
             <form className="form-registration" name="simple form" autoComplete="on" noValidate>
                 <fieldset className="fieldset">
                     <legend className="legend"> Авторизация пользователя </legend>
@@ -69,13 +67,11 @@ export const AuthPage = () => {
                     onChange={changeHandler}
                     value={form.password}
                 />
-
                     <label htmlFor="password">Password</label>
                     <div className="wrapper">
                         <button className="btn waves-effect waves-light"
                                 type="submit"
                                 name="action"
-
                                 onClick={loginHandler}
                         ><i className="material-icons right">Вход</i>
                         </button>
@@ -85,12 +81,10 @@ export const AuthPage = () => {
                                 type="submit"
                                 name="action"
                                 onClick={registerHandler}
-
                         ><i className="material-icons right">Зарегистрироваться</i></button>
                     </div>
                 </fieldset>
             </form>
-
         </div>
     )
 }

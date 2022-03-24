@@ -2,10 +2,8 @@ import {useState, useCallback, useEffect} from 'react';
 
 const storageName = 'Userdata';
 export const useAuth = () => {
-
     const [token, setToken] = useState(null);
     const [userId, setUserId] = useState(null);
-
     const login = useCallback((jwtToken, id) => {
         setToken(jwtToken)
         setUserId(id)
