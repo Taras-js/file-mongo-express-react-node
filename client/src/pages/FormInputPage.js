@@ -34,7 +34,7 @@ export const FormInputPage = () => {
         clearError()
     },[error, message, clearError])
     return (
-        <div>
+        <div className="card-panel teal text-lighten-5">
             <div>
                 <form  action="#"
                        className="form-registration"
@@ -75,15 +75,17 @@ export const FormInputPage = () => {
                                 </div>
                             </div>
                             <div>
-                                <button
-                                    className="button"
-                                    onClick={sendFile}
-                                >Добавить</button>
+                                <button className="btn waves-effect waves-light"
+                                        type="submit"
+                                        name="action"
+                                        onClick={sendFile}
+                                ><i className="material-icons right">Добавить</i>
+                                </button>
                             </div>
                     </fieldset>
                 </form>
             </div>
-     <div>
+     <div className="form-file">
          <div>  {
              avatar
                  ? <img className="logo" src={`${avatar}`} alt="avatar"/>

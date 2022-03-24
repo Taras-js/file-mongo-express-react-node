@@ -11,11 +11,9 @@ export const Navbar = () => {
         navigate('/')
     }
     return (
-        <nav>
-            <div className="nav-wrapper light-blue darken-1">
-                <span  className="brand-logo">Добавление картинок с описанием</span>
+        <nav >
+            <div className="nav-wrapper teal text-lighten-5">
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><NavLink to="/">Добавить картинку</NavLink></li>
                     <li><NavLink to="/"
                            onClick={logoutHandler}
                     >Выйти</NavLink></li>

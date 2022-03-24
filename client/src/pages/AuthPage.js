@@ -6,7 +6,7 @@ import {AuthContext} from "../context/AuthContext";
 export const AuthPage = () => {
     const auth = useContext(AuthContext)
     const message = useMessage()
-    const { loading, error, request, clearError} = useHttp()
+    const { error, request, clearError} = useHttp()
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -20,7 +20,8 @@ export const AuthPage = () => {
         setForm({...form, [event.target.name]: event.target.value})
         console.log('form:', form)
     }
-    const registerHandler = async () => {
+    const registerHandler = async event => {
+        event.preventDefault()
         try {
             const data = await request('/api/auth/register', 'POST', {...form})
             console.log('data:', data)
@@ -33,7 +34,8 @@ export const AuthPage = () => {
         }
 
     }
-    const loginHandler = async () => {
+    const loginHandler = async event => {
+        event.preventDefault()
         try {
             const data = await request('/api/auth/login', 'POST', {...form})
             auth.login(data.token, data.userId)
@@ -41,11 +43,8 @@ export const AuthPage = () => {
         }
     }
     return (
-        <div>
-            {auth.isAuthenticated
-            ?<h5>Вы зарегистрированы! для входа введите емайд и пароль и нажмите кнопку войти</h5>
-            :<h5>Для авторизации введите емайл и пароль и нажмите кнопку зарегистрироваться</h5>
-            }
+        <div className="card-panel teal text-lighten-5">
+
 
             <form className="form-registration" name="simple form" autoComplete="on" noValidate>
                 <fieldset className="fieldset">
@@ -72,19 +71,26 @@ export const AuthPage = () => {
                 />
 
                     <label htmlFor="password">Password</label>
-                    <div className="card-action">
-                    <button className="button"
-                            disabled={loading}
-                            onClick={loginHandler}
+                    <div className="wrapper">
+                        <button className="btn waves-effect waves-light"
+                                type="submit"
+                                name="action"
 
-                    >Войти</button>
-                    <button className="button"
-                            onClick={registerHandler}
-                            disabled={loading}
-                    >Зарегистрироваться</button>
+                                onClick={loginHandler}
+                        ><i className="material-icons right">Вход</i>
+                        </button>
+                    </div>
+                    <div>
+                        <button className="btn waves-effect waves-light"
+                                type="submit"
+                                name="action"
+                                onClick={registerHandler}
+
+                        ><i className="material-icons right">Зарегистрироваться</i></button>
                     </div>
                 </fieldset>
             </form>
+
         </div>
     )
 }
