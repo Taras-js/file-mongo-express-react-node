@@ -1,0 +1,99 @@
+@import "~materialize-css";
+.wrapper {
+  text-align: center;
+  color: black;
+}
+.form-registration {
+  width: 380px;
+  height: 320px;
+  margin: 2rem auto;
+
+  background-color: #716aff;
+  border-radius: 30px;
+  border: 2px solid black;
+}
+.fieldset {
+  display: grid;
+  border-radius: 30px;
+  width: 320px;
+  margin: 0 auto;
+  border: none;
+
+}
+
+.fieldset button:hover {
+  color: #F7654A;
+  cursor: pointer;
+  background-color: black;
+  transform: translate(-1px, 1px);
+}
+.legend {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+
+}
+.text {
+  resize: none;
+  overflow-y: hidden;
+}
+.button {
+  height: 40px;
+  /*background-color: #6cefff;*/
+  border-radius: 30px;
+  font-size: 20px;
+  color: black;
+  margin: 5px;
+  width: 300px;
+  background-color: #57feb2;
+}
+.yellow-input {
+  color: white;
+}
+.yellow-input::placeholder {
+  color: black;
+  font-size: 20px;
+}
+label {
+  color: white;
+  font-size: 15px;
+}
+.file {
+  height: 40px;
+  background-color: #6cefff;
+  border-radius: 3px;
+  font-size: 15px;
+  color: black;
+  margin: 5px;
+  width: 300px;
+}
+textarea {
+  background-color: #57feb2;
+  border-radius: 5px;
+}
+textarea::placeholder {
+  color: black;
+}
+.file:hover {
+  color: #F7654A;
+  cursor: pointer;
+  background-color: black;
+
+}
+.logo {
+  width: 350px;
+  height: 350px;
+  border-radius: 48%;
+  border: 3px solid #331d0e;
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .form-registration {
+    width: 310px;
+  }
+  .fieldset {
+    width: 300px;
+  }
+  .button {
+    width: 280px;
+  }
+}
