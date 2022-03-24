@@ -55,14 +55,11 @@ textarea::placeholder {
   color: #F7654A;
   cursor: pointer;
   background-color: black;
-
 }
 .logo {
   width: 350px;
   height: 350px;
   border-radius: 48%;
-
-
 }
 .btn i{
   width: 300px;
