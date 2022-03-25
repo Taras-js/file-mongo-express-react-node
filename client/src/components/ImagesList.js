@@ -1,10 +1,10 @@
 import React from 'react';
 
-export const ImagesList = (props) => {
+export const ImagesList = ({images}) => {
 
     return (
         <>
-                {props.props.map(image => {
+                {images.map(image => {
                         return (
                             <div>
                                 <div className="row">

@@ -14,9 +14,7 @@ export const AllImgPage = () => {
            const fetched = await request('/api/images', 'GET', null, {
                 Authorization: `Bearer ${auth.token}`
             })
-
             setImages(fetched)
-            console.log('fetched', fetched)
         } catch (e) {
         }
     }, [auth.token, request])
@@ -30,7 +28,7 @@ export const AllImgPage = () => {
             { !images
                 ? <PreLoader/>
                 :  (
-                    <ImagesList props={images} />
+                    <ImagesList images={images} />
                 )
             }
         </div>
