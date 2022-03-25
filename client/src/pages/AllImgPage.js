@@ -26,15 +26,13 @@ export const AllImgPage = () => {
 
 
     return (
-        <>
+        <div className="image-page">
             { !images
                 ? <PreLoader/>
                 :  (
-                    <>
                     <ImagesList props={images} />
-                </>
                 )
             }
-        </>
+        </div>
     )
 }

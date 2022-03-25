@@ -19,7 +19,8 @@ export const ImagesList = (props) => {
                                                     <div>Размер картинки: {(image.size/1048576).toFixed(2)} Mb</div></p>
                                             </div>
                                             <div className="card-action">
-                                                <a href="#">УДАЛИТЬ</a>
+                                                <button className="btn waves-effect waves-light"
+                                                ><i className="material-icons right">УДАЛИТЬ</i> </button>
                                             </div>
                                         </div>
                                     </div>

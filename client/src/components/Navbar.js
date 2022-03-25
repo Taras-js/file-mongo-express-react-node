@@ -13,7 +13,7 @@ export const Navbar = () => {
     return (
         <nav>
             <div className="nav-wrapper teal text-lighten-5">
-                <ul id="nav-mobile" className="left ">
+                <ul id="nav-mobile" className="right">
                     <li><NavLink to="/image"
                     >Все картинки пользователя</NavLink></li>
                     <li><NavLink to="/"
