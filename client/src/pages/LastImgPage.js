@@ -2,32 +2,33 @@ import React, {useCallback, useContext, useEffect, useState} from 'react';
 import {useHttp} from "../hooks/http.hook";
 import {AuthContext} from "../context/AuthContext";
 import {PreLoader} from "../components/PreLoader";
-import {ImagesList} from "../components/ImagesList";
+import {LastImage} from "../components/LastImage";
 
-export const AllImgPage = () => {
+export const LastImgPage = () => {
 
     const auth = useContext(AuthContext)
     const {request} = useHttp()
-    const [images, setImages] = useState(null)
-    const getImages = useCallback(async () => {
+    const [image, setImage] = useState(null)
+    const fetchLasElement = useCallback(async () => {
         try {
-           const fetched = await request('/api/images', 'GET', null, {
+            const fetchLasElement = await request(`/api/images/last`, 'GET', null, {
                 Authorization: `Bearer ${auth.token}`
             })
-            setImages(fetched)
+            const [lastElement] = fetchLasElement.slice(-1)
+            setImage(lastElement)
         } catch (e) {
         }
     }, [auth.token, request])
     useEffect(() => {
-        getImages()
-    }, [getImages])
+        fetchLasElement()
+    }, [fetchLasElement])
 
     return (
         <div className="image-page">
-            { !images
+            {   !image
                 ? <PreLoader/>
                 :  (
-                    <ImagesList images={images} />
+                    <LastImage image={image} />
                 )
             }
         </div>

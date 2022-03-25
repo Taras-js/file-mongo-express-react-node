@@ -36,8 +36,16 @@ router.get('/', auth, async (req, res) => {
 })
 router.get('/last', auth, async (req, res) => {
     try {
-        const images = await Image.find({user: req.user.userId})
-        res.json(images)
+        const image = await Image.find({user: req.user.userId})
+        res.json(image)
+    } catch (error){
+        res.status(500).json({message: 'Что-то пошло не так'})
+    }
+})
+router.get('/:id', auth, async (req, res) => {
+    try {
+        const image = await Image.findById(req.params.id)
+        res.json(image)
     } catch (error){
         res.status(500).json({message: 'Что-то пошло не так'})
     }
