@@ -14,6 +14,8 @@ export const Navbar = () => {
         <nav>
             <div className="nav-wrapper teal text-lighten-5">
                 <ul id="nav-mobile" className="left ">
+                    <li><NavLink to="/image"
+                    >Все картинки пользователя</NavLink></li>
                     <li><NavLink to="/"
                     >Добавить картинку</NavLink></li>
                     <li><NavLink to="/"
