@@ -2,24 +2,31 @@ import React from 'react';
 
 export const ImagesList = (props) => {
 
-
-    console.log('props', props)
-
     return (
         <>
-            {
-            props.props.map(image => {
+                {props.props.map(image => {
                         return (
                             <div>
-                                <img className="logo" src={`${image.path}`} alt={'avatar'}/>
-                                <div>Имя загруженного файла: {image.name}</div>
-                                <div>Размер картинки: {(image.size/1048576).toFixed(2)} Mb</div>
-                                <div>Описание картинки: {image.text}</div>
+                                <div className="row">
+                                    <div className="col s12 m7">
+                                        <div className="card">
+                                            <div className="card-image">
+                                                <img className="logo" src={`${image.path}`} alt={'avatar'}/>
+                                                    <span className="card-title">Описание картинки: {image.text}</span>
+                                            </div>
+                                            <div className="card-content">
+                                                <p><div>Имя загруженного файла: {image.name}</div>
+                                                    <div>Размер картинки: {(image.size/1048576).toFixed(2)} Mb</div></p>
+                                            </div>
+                                            <div className="card-action">
+                                                <a href="#">УДАЛИТЬ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         )
                     })
-
-
             }
             </>
     )

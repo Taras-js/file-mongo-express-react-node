@@ -61,7 +61,7 @@ textarea::placeholder {
 .logo {
   width: 350px;
   height: 350px;
-  border-radius: 48%;
+  border-radius: 5%;
 }
 .btn i{
   width: 300px;

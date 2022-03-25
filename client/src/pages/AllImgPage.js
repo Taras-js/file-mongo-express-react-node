@@ -7,7 +7,7 @@ import {ImagesList} from "../components/ImagesList";
 export const AllImgPage = () => {
 
     const auth = useContext(AuthContext)
-    const {request, loading} = useHttp()
+    const {request} = useHttp()
     const [images, setImages] = useState(null)
     const getImages = useCallback(async () => {
         try {
