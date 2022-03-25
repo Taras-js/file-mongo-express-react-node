@@ -8,7 +8,7 @@ export const FormInputPage = () => {
     const auth = useContext(AuthContext)
     const message = useMessage()
     const { error, clearError} = useHttp()
-    const [text, setText] = useState('')
+    const [text, setText] = useState(null)
     const [img, setImg] = useState(null)
     const [avatar, setAvatar] = useState(null)
     const sendFile = useCallback(async event => {
@@ -16,6 +16,7 @@ export const FormInputPage = () => {
         try {
           const data = new FormData()
             data.append('avatar', img)
+            data.append('text', text)
             await axios.post('/api/images/upload', data, {
                 headers: {
                     "content-type": "multipart/form-data",
@@ -28,7 +29,7 @@ export const FormInputPage = () => {
                 } )
         }catch (error) {
         }
-    }, [img, auth.token])
+    }, [img, auth.token, text])
     useEffect(() => {
         message(error)
         clearError()
