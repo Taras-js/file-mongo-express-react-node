@@ -9,7 +9,7 @@ export const FormInputPage = () => {
   const auth = useContext(AuthContext);
   const message = useMessage();
   const { error, clearError } = useHttp();
-  const [text, setText] = useState(null);
+  const [text, setText] = useState('');
   const [img, setImg] = useState(null);
   const [avatar, setAvatar] = useState(null);
   const sendFile = useCallback(
