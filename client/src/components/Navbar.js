@@ -11,8 +11,8 @@ export const Navbar = () => {
     navigate("/");
   };
   return (
-    <nav>
-      <div className="nav-wrapper teal text-lighten-5">
+
+      <nav className="nav-wrapper teal text-lighten-3">
         <ul id="nav-mobile" className="right">
           <li>
             <NavLink to="/image">Все картинки пользователя</NavLink>
@@ -29,7 +29,7 @@ export const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+
   );
 };

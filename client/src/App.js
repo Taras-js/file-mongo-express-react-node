@@ -20,7 +20,7 @@ function App() {
       }}
     >
       {isAuthenticated && <Navbar />}
-      <div className="card-panel teal text-lighten-5">{routes}</div>
+      <div>{routes}</div>
     </AuthContext.Provider>
   );
 }

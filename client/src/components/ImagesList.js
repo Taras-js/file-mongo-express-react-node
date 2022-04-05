@@ -5,7 +5,7 @@ export const ImagesList = ({ images }) => {
     <>
       {images.map((image) => {
         return (
-          <div key={image._id}>
+          <div key={image._id} className="all-image">
             <div className="row">
               <div className="col s12 m7">
                 <div className="card">
